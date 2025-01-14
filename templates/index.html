@@ -45,9 +45,25 @@
         }
 
         .assistant-message code {
-            font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
-            font-size: 0.9em;
-        }
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    background-color: var(--code-bg, #f5f5f5); /* Light mode default */
+    color: var(--code-color, #333333); /* Text color */
+    border: 1px solid var(--code-border, #cccccc); /* Border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 0.2em 0.4em; /* Inner padding */
+    display: inline-block; /* Inline appearance */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme changes */
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .assistant-message code {
+        background-color: var(--code-bg-dark, #2d2d2d); /* Dark mode background */
+        color: var(--code-color-dark, #ffffff); /* Text color */
+        border: 1px solid var(--code-border-dark, #444444); /* Border color */
+    }
+}
 
         .assistant-message p {
             margin: 0.75rem 0;
